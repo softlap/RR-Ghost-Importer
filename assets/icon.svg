@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b2030"/><stop offset="1" stop-color="#0b0d12"/></linearGradient>
+    <linearGradient id="g" x1="0.15" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#ff7a3d"/><stop offset="1" stop-color="#ff3d78"/></linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
+  <!-- ghost: dome head, straight sides, three-wave hem -->
+  <path fill="url(#g)" d="M64 190 V118 C64 83 92 58 128 58 C164 58 192 83 192 118 V190 L170 170 L149 190 L128 170 L107 190 L86 170 Z"/>
+  <!-- eyes -->
+  <ellipse cx="106" cy="116" rx="12" ry="16" fill="#10131a"/>
+  <ellipse cx="150" cy="116" rx="12" ry="16" fill="#10131a"/>
+  <circle cx="110" cy="110" r="4.5" fill="#fff"/><circle cx="154" cy="110" r="4.5" fill="#fff"/>
+  <!-- speed lines: it's a time-trial ghost -->
+  <g stroke="#ff6a5a" stroke-width="9" stroke-linecap="round" opacity=".6"><path d="M30 104 H50"/><path d="M24 128 H50"/><path d="M34 152 H50"/></g>
+</svg>

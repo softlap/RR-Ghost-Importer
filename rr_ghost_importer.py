@@ -403,7 +403,7 @@ HTML = r"""<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#10131a">
 <meta name="color-scheme" content="dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff6a3d'/%3E%3Cstop offset='1' stop-color='%23ff3d78'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Segoe UI,Arial' font-weight='700' text-anchor='middle' fill='white'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='#1b2030'/%3E%3Cstop offset='1' stop-color='#0b0d12'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' x1='0.15' y1='0' x2='0.85' y2='1'%3E%3Cstop offset='0' stop-color='#ff7a3d'/%3E%3Cstop offset='1' stop-color='#ff3d78'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='256' height='256' rx='58' fill='url(#bg)'/%3E%3Cpath fill='url(#g)' d='M64 190 V118 C64 83 92 58 128 58 C164 58 192 83 192 118 V190 L170 170 L149 190 L128 170 L107 190 L86 170 Z'/%3E%3Cellipse cx='106' cy='116' rx='12' ry='16' fill='#10131a'/%3E%3Cellipse cx='150' cy='116' rx='12' ry='16' fill='#10131a'/%3E%3Ccircle cx='110' cy='110' r='4.5' fill='#fff'/%3E%3Ccircle cx='154' cy='110' r='4.5' fill='#fff'/%3E%3Cg stroke='#ff6a5a' stroke-width='9' stroke-linecap='round' opacity='.6'%3E%3Cpath d='M30 104 H50'/%3E%3Cpath d='M24 128 H50'/%3E%3Cpath d='M34 152 H50'/%3E%3C/g%3E%3C/svg%3E">
 <style>
 :root{color-scheme:dark;--bg:#10131a;--card:#1a1e28;--card2:#262c3b;--line:#323a4f;--tx:#eef0f6;--dim:#8d95aa;--acc:#ff5436;--acc2:#ff6e54;--good:#4cd18b;--warn:#f0b94a;--bad:#ff6b6b}
 *{box-sizing:border-box}
@@ -732,7 +732,7 @@ function collect(){
 }
 async function run(mode){
   const c=collect();if(!c)return;
-  if(mode==='import'&&!confirm('The game and Dolphin must be closed. Continue?'))return;
+  if(mode==='import'&&!confirm('Close the game (and any emulator) before importing. Continue?'))return;
   const classes=[150,200].filter(x=>S.cc[x]);
   try{
     const r=await api('/api/run',{mode,classes,items:c.items});

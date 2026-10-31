@@ -39,7 +39,7 @@ python rr_ghost_importer.py
 - Double-click `launch.pyw` to run without a console window.
 - For a real app window instead of an Edge/Chrome one: `pip install pywebview` (uses the WebView2 component that
   ships with Windows 10/11).
-- Build an exe: run `build_exe.bat` (needs `pip`; produces `dist\RRGhostImporter.exe`).
+- Build an exe: run `build_exe.bat` (needs `pip`; produces `dist\RRGhostImporter.exe`, using `assets/icon.ico` if the folder is there).
 - Options: `--ghosts-dir PATH`, `--no-window` (prints the local address), `--port N`, `--version`.
 
 ## Using it
