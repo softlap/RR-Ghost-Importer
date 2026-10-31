@@ -24,8 +24,8 @@ The pack ships `FolderToTrackNameRT.txt` / `FolderToTrackNameCT.txt` (`Track nam
 names to track names. A second version of a track is not listed there; the game writes the real name into that
 version's `ldb.pul` header.
 
-A bare `.rkg` placed in a track folder is **not** shown by the game - it is listed from `ldb.pul`, so a leaderboard
-entry is needed as well as the file. (Verified by trial: dropping the file alone did nothing.)
+In testing, a bare `.rkg` placed in a track folder did **not** appear in the game, while a file plus a matching
+`ldb.pul` entry did. So the game appears to list ghosts from `ldb.pul`; a leaderboard entry is needed as well as the file.
 
 ## ldb.pul (always 4544 bytes)
 
