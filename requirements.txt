@@ -1,0 +1,5 @@
+# The app itself needs only the Python standard library.
+# Optional - a native app window instead of an Edge/Chrome one:
+pywebview>=5
+# Only for building the exe (build_exe.bat installs these for you):
+# pyinstaller
