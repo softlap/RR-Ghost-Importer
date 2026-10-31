@@ -11,9 +11,11 @@ preview, import. No hand-editing of game files.
 
 ## Why this exists
 
-Retro Rewind doesn't keep ghosts in the Wii save file like the normal game, so tools made for `rksys.dat` don't help.
-It keeps one folder per track with a `ldb.pul` leaderboard and the ghost files named by time - and a ghost file
-dropped in on its own isn't shown. This tool writes both parts the way the game does. The format notes are in
+Retro Rewind saves the ghosts you set as files in its own `Ghosts` folder: one folder per track, a `ldb.pul`
+leaderboard, and the ghost files named by finish time. In my testing, importing a ghost with a save-file tool
+(Ghost Manager) didn't make it appear in Retro Rewind, and dropping a `.rkg` into a track folder on its own didn't
+either - the game lists ghosts from the leaderboard. So this tool writes both parts the way the game does. (I can't
+rule out other routes; this is just what worked.) The format notes are in
 [`docs/ldb-pul-format.md`](docs/ldb-pul-format.md), in case they help someone else (or Wheel Wizard itself).
 
 ## Features
@@ -42,7 +44,7 @@ python rr_ghost_importer.py
 
 ## Using it
 
-1. **Close the game and Dolphin.**
+1. **Close the game** (and your emulator, if you use one).
 2. The Ghosts folder (`...\Pulsar\RetroRewind6\Ghosts`) is found automatically; use *Browse* if it isn't.
 3. Drop your `.rkg` files in. Each ghost gets a **Track** cell: if it only fits one track it is filled in, otherwise
    choose from the shortlist or search by name. A track that isn't listed can be entered by typing its 8-character ID
@@ -61,6 +63,7 @@ backup back. Ghost files the tool added are in the `150` / `200` folders and can
   number, and several tracks share each one. It needs the pack's `ExpertsRT` folder and track list, which are found on
   a normal install.
 - A ghost recorded on a different Retro Rewind version of a track may desync or not load.
+- Tested on one setup only (Windows, Wheel Wizard, Retro Rewind v6). It works on the files the game writes, so how you launch the game shouldn't matter, but that is untested.
 - Windows tested only. The leaderboard/folder logic is plain Python and should work elsewhere; the window launcher
   and title-bar tweaks are Windows-specific.
 
@@ -68,7 +71,7 @@ backup back. Ghost files the tool added are in the `150` / `200` folders and can
 
 - The app only talks to your own computer (`127.0.0.1`, random port, with a per-run token).
 - It only writes inside the Ghosts folder you pick: `ldb.pul` files and the ghost files in `150` / `200`.
-- It never touches trophies, your save, or any game files.
+- It doesn't touch your save file or change trophy values. It only edits the leaderboard files (`ldb.pul`) and adds ghost files in the Ghosts folder.
 
 ## Development
 
